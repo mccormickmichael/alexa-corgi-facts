@@ -31,15 +31,7 @@ const STOP_MESSAGE = 'Goodbye!';
 const data = [
   'Corgi fact zero',
   'Corgi fact one.',
-  'Corgi fact number two.',
-  'The third Corgi fact.',
-  'Corgi fact four.',
-  'Corgi fact number five.',
-  'The sixth Corgi fact.',
-  'Corgi fact seven.',
-  'Corgi fact number eight.',
-  'The ninth Corgi fact.',
-  'Corgi fact ten.'
+  'Corgi fact two.',
 ];
 
 var frequencies = data.map(x => 0);
@@ -60,11 +52,27 @@ const handlers = {
         this.emit('GetNewFactIntent');
     },
     'GetNewFactIntent': function () {
+        frequencies[factIndex]++;
+        var highest = 0;
+        var total = 0;
+        for (i = 0; i < frequencies; i++){
+          if (frequencies[i] > highest){
+            highest = frequencies[i];
+          }
+          total += highest - frequencies[i];
+        }
+        var invFrequencies = data.map(x => highest - x);
+        var rand = Math.floor(Math.random() * total);
+        for (i = 0; i < frequencies; i++){
+          rand -= invFrequencies(i);
+          if (rand >= 0){
+            factIndex = i;
+            break
+          }
+        }
         const factArr = data;
-        const factIndex = Math.floor(Math.random() * factArr.length);
         const randomFact = factArr[factIndex];
         const speechOutput = GET_FACT_MESSAGE + randomFact;
-        frequencies[factIndex]++;
         console.log(frequencies[factIndex]);
 
         this.response.cardRenderer(SKILL_NAME, randomFact);
