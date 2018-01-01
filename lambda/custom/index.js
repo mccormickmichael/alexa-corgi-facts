@@ -29,17 +29,17 @@ const STOP_MESSAGE = 'Goodbye!';
 //TODO: Replace this data with your own.  You can find translations of this data at http://github.com/alexa/skill-sample-node-js-fact/lambda/data
 //=========================================================================================================================================
 const data = [
-  'Corgi fact one.',
-  'Corgi fact number two.',
-  'The third Corgi fact.',
-  'Corgi fact four.',
-  'Corgi fact number five.',
-  'The sixth Corgi fact.',
-  'Corgi fact seven.',
-  'Corgi fact number eight.',
-  'The ninth Corgi fact.',
-  'Corgi fact ten.'
+  "Corgis are the eleventh smartest dog breed.",
+  "Queen Elizabeth has five corgis named Monty, Emma, Linnet, Willow, and Holly.",
+  "Corgis are one foot tall at the shoulder.",
+  "Corgis have been bred to be nearly tailless.",
+  "Corgis can sploot.",
+  "The name 'corgi' means 'dwarf dog' in Welsh.",
+  "Legend says that fairies used to ride corgis into battle.",
+  "Corgis come in six colors: Fawn, Blue, Red, Sable, Black and Tan, and Black and White"
 ];
+
+var frequencies = data.map( x => 0);
 
 //=========================================================================================================================================
 //Editing anything below this line might break your skill.
