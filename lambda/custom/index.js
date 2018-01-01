@@ -52,7 +52,7 @@ const handlers = {
         this.emit('GetNewFactIntent');
     },
     'GetNewFactIntent': function () {
-        var factindex = 0;
+        var factIndex = 0;
         frequencies[factIndex]++;
         var highest = 0;
         var total = 0;
