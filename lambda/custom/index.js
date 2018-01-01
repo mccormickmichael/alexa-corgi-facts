@@ -29,6 +29,7 @@ const STOP_MESSAGE = 'Goodbye!';
 //TODO: Replace this data with your own.  You can find translations of this data at http://github.com/alexa/skill-sample-node-js-fact/lambda/data
 //=========================================================================================================================================
 const data = [
+  'Corgi fact zero',
   'Corgi fact one.',
   'Corgi fact number two.',
   'The third Corgi fact.',
@@ -40,6 +41,8 @@ const data = [
   'The ninth Corgi fact.',
   'Corgi fact ten.'
 ];
+
+var frequencies = new Array(data.length);
 
 //=========================================================================================================================================
 //Editing anything below this line might break your skill.
@@ -61,6 +64,8 @@ const handlers = {
         const factIndex = Math.floor(Math.random() * factArr.length);
         const randomFact = factArr[factIndex];
         const speechOutput = GET_FACT_MESSAGE + randomFact;
+        frequencies[factIndex]++;
+        console.log(frequencies[factIndex]);
 
         this.response.cardRenderer(SKILL_NAME, randomFact);
         this.response.speak(speechOutput);

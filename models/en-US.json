@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "corgi facts",
+      "invocationName": "Corgi facts",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
