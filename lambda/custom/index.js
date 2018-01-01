@@ -53,10 +53,10 @@ const handlers = {
     },
     'GetNewFactIntent': function () {
         var factIndex = 0;
-        frequencies[factIndex]++;
         var highest = 0;
         var total = 0;
         for (var i = 0; i < frequencies.length; i++){
+          console.log('iterated through loop 1');
           if (frequencies[i] > highest){
             highest = frequencies[i];
           }
@@ -65,8 +65,9 @@ const handlers = {
         var invFrequencies = data.map(x => highest - x);
         var rand = Math.floor(Math.random() * total);
         for (var i = 0; i < frequencies.length; i++){
+          console.log('iterated through loop 2');
           rand -= invFrequencies[i];
-          if (rand >= 0){
+          if (rand <= 0){
             factIndex = i;
             break
           }
@@ -76,7 +77,6 @@ const handlers = {
         const factArr = data;
         const randomFact = factArr[factIndex];
         const speechOutput = GET_FACT_MESSAGE + randomFact;
-        console.log(frequencies[factIndex]);
 
         this.response.cardRenderer(SKILL_NAME, randomFact);
         this.response.speak(speechOutput);
