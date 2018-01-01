@@ -16,19 +16,26 @@
       "name": "GetNewFactIntent",
       "samples": [
         "a fact",
-        "a space fact",
+        "a corgi fact",
         "tell me a fact",
-        "tell me a space fact",
+        "tell me a fact about corgis",
+        "tell me a corgi fact",
         "give me a fact",
-        "give me a space fact",
+        "give me a fact about corgis",
+        "give me a corgi fact",
         "tell me trivia",
-        "tell me a space trivia",
+        "tell me trivia about corgis",
+        "tell me a corgi trivia",
         "give me trivia",
-        "give me a space trivia",
+        "give me trivia about corgis",
+        "give me a corgi trivia",
         "give me some information",
-        "give me some space information",
+        "give me some information about corgis",
+        "give me some corgi information",
         "tell me something",
-        "give me something"
+        "tell me something about corgis",
+        "give me something",
+        "give me something about corgis"
       ],
       "slots": []
     }
