@@ -60,7 +60,7 @@ const handlers = {
             highest = frequencies[i];
           }
         }
-        var invFrequencies = data.map(x => highest - x + 1);
+        var invFrequencies = frequencies.map(x => highest - x + 1);
         for (var i = 0; i < invFrequencies.length; i++){
           invTotal += invFrequencies[i];
         }
