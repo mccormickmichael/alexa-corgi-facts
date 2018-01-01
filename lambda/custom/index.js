@@ -65,7 +65,6 @@ const handlers = {
           invTotal += invFrequencies[i];
         }
         var rand = Math.floor(Math.random() * invTotal);
-        var temp = rand;    //remove along with console.log
         for (var i = 0; i < frequencies.length; i++){
           rand -= invFrequencies[i];
           if (rand <= 0){
@@ -73,8 +72,6 @@ const handlers = {
             break
           }
         }
-        console.log('factIndex: ' + factIndex + ' highest: ' + highest + ' invTotal: ' + invTotal + ' rand: ' + temp);
-        console.log('0: ' + invFrequencies[0] + ' 1: ' + invFrequencies[1] + ' 2: ' + invFrequencies[2])
         frequencies[factIndex]++;
         const factArr = data;
         const randomFact = factArr[factIndex];
