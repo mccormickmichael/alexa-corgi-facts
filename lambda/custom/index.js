@@ -42,7 +42,7 @@ const data = [
   'Corgi fact ten.'
 ];
 
-var frequencies = new Array(data.length);
+var frequencies = data.map(x => 0);
 
 //=========================================================================================================================================
 //Editing anything below this line might break your skill.
