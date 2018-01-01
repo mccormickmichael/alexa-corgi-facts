@@ -34,7 +34,7 @@ const data = [
   'Corgi fact two.',
 ];
 
-var frequencies = data.map(x => 1);
+var frequencies = data.map(x => 0);
 
 //=========================================================================================================================================
 //Editing anything below this line might break your skill.
@@ -54,18 +54,18 @@ const handlers = {
     'GetNewFactIntent': function () {
         var factIndex = 0;
         var highest = 0;
-        var total = 0;
+        var invTotal = 0;
         for (var i = 0; i < frequencies.length; i++){
-          console.log('iterated through loop 1');
           if (frequencies[i] > highest){
             highest = frequencies[i];
           }
-          total += highest - frequencies[i];
         }
-        var invFrequencies = data.map(x => highest - x);
-        var rand = Math.floor(Math.random() * total);
+        var invFrequencies = data.map(x => highest - x + 1);
+        for (var i = 0; i < invFrequencies.length; i++){
+          invTotal += invFrequencies[i];
+        }
+        var rand = Math.floor(Math.random() * invTotal);
         for (var i = 0; i < frequencies.length; i++){
-          console.log('iterated through loop 2');
           rand -= invFrequencies[i];
           if (rand <= 0){
             factIndex = i;
