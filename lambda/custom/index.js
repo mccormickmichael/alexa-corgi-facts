@@ -34,7 +34,7 @@ const data = [
   'Corgi fact two.',
 ];
 
-var frequencies = data.map(x => 0);
+var frequencies = data.map(x => 1);
 
 //=========================================================================================================================================
 //Editing anything below this line might break your skill.
@@ -52,6 +52,7 @@ const handlers = {
         this.emit('GetNewFactIntent');
     },
     'GetNewFactIntent': function () {
+        var factindex = 0;
         frequencies[factIndex]++;
         var highest = 0;
         var total = 0;
@@ -70,6 +71,7 @@ const handlers = {
             break
           }
         }
+        frequencies[factIndex]++;
         const factArr = data;
         const randomFact = factArr[factIndex];
         const speechOutput = GET_FACT_MESSAGE + randomFact;
