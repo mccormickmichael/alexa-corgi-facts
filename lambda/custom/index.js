@@ -72,7 +72,7 @@ const handlers = {
             break
           }
         }
-        console.log('factIndex: ' + factIndex + ' highest: ' + highest + ' total: ' + total + ' rand: ' + rand);
+        console.log('factIndex: ' + factIndex + ' highest: ' + highest + ' invTotal: ' + invTotal + ' rand: ' + rand);
         frequencies[factIndex]++;
         const factArr = data;
         const randomFact = factArr[factIndex];
