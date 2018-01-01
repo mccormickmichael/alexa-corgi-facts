@@ -28,6 +28,7 @@ const STOP_MESSAGE = 'Goodbye!';
 //=========================================================================================================================================
 //TODO: Replace this data with your own.  You can find translations of this data at http://github.com/alexa/skill-sample-node-js-fact/lambda/data
 //=========================================================================================================================================
+
 const data = [
   "Corgis are the eleventh smartest dog breed.",
   "Queen Elizabeth has five corgis named Monty, Emma, Linnet, Willow, and Holly.",
@@ -57,8 +58,28 @@ const handlers = {
         this.emit('GetNewFactIntent');
     },
     'GetNewFactIntent': function () {
+        var factIndex = 0;
+        var highest = 0;
+        var invTotal = 0;
+        for (var i = 0; i < frequencies.length; i++){
+          if (frequencies[i] > highest){
+            highest = frequencies[i];
+          }
+        }
+        var invFrequencies = frequencies.map(x => highest - x + 1);
+        for (var i = 0; i < invFrequencies.length; i++){
+          invTotal += invFrequencies[i];
+        }
+        var rand = Math.floor(Math.random() * invTotal);
+        for (var i = 0; i < frequencies.length; i++){
+          rand -= invFrequencies[i];
+          if (rand <= 0){
+            factIndex = i;
+            break
+          }
+        }
+        frequencies[factIndex]++;
         const factArr = data;
-        const factIndex = Math.floor(Math.random() * factArr.length);
         const randomFact = factArr[factIndex];
         const speechOutput = GET_FACT_MESSAGE + randomFact;
 

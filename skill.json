@@ -13,7 +13,7 @@
             "facts",
             "welsh"
           ],
-          "name": "Corgi Facts",
+          "name": "Test Corgi Facts",
           "description": "Ask for facts about Welsh Corgis. Learn about why they are the best kind of dog to have.\n\nTo start, just say \"Alexa, launch Corgi Facts\" or \"Alexa, open Corgi Facts\" to get a fact.\n\nAt anytime, you can stop by saying \"Alexa, stop\""
         }
       },
