@@ -1,14 +1,14 @@
 {
   "deploy_settings": {
     "default": {
-      "skill_id": "amzn1.ask.skill.643c0cae-e69a-4f3c-9786-ac72e89dd79e",
+      "skill_id": "",
       "was_cloned": false,
       "merge": {
         "skillManifest": {
           "apis": {
             "custom": {
               "endpoint": {
-                "uri": "Corgi_Facts_Lambda"
+                "uri": "Corgi_Facts_Test_Lambda"
               }
             }
           }
