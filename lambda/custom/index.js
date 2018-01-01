@@ -65,7 +65,7 @@ const handlers = {
         var invFrequencies = data.map(x => highest - x);
         var rand = Math.floor(Math.random() * total);
         for (var i = 0; i < frequencies.length; i++){
-          rand -= invFrequencies(i);
+          rand -= invFrequencies[i];
           if (rand >= 0){
             factIndex = i;
             break
